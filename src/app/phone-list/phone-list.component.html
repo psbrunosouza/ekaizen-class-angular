@@ -1,0 +1,18 @@
+<h1>{{title}}</h1>
+
+<div class="phone-list-container">
+   <div *ngFor="let phone of phoneList; let i = index">
+      <app-phone [index]="i" [phone]="phone"></app-phone>
+   </div>
+</div>
+
+<form>
+  <label>name</label>
+  <input [(ngModel)]="phone.name"  name="name" placeholder="name"/>
+  <label>phone</label>
+  <input [(ngModel)]="phone.phone" name="phone" placeholder="phone"/>
+  <label>is blocked</label>
+  <input [(ngModel)]="phone.isBlocked" name="isBlocked" type="checkbox" />
+  <button (click)="savePhone(phone)">Save</button>
+</form>
+
